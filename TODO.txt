@@ -1,0 +1,15 @@
+BUGS:
+
+- Rever sistema atual de billing (refactor, verificacao de tudo que o better auth oferece mais!)
+
+- admin dashboard.
+
+- paginas para users com subscription! (Arranjar features para premium)
+
+- Meter accept cookies, ver regulamento europeu compliance.
+
+Future:
+
+Adicionar verificacao de email? Implica um maior numero de usos do resend.
+Arranjar solucoes de reduzir Custos: cloudinary, postgress database, resend.
+Ticket System with Real time chat
