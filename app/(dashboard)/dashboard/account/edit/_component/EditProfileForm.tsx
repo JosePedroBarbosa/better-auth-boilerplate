@@ -277,6 +277,7 @@ export default function EditProfileForm({ user }: { user: User }) {
             setHasChanges(false);
             toast.success("Profile updated successfully!");
             router.refresh();
+            router.push("/dashboard/account");
           }
         } catch (error) {
           const errorMessage =
@@ -498,7 +499,7 @@ export default function EditProfileForm({ user }: { user: User }) {
                   }
                 >
                   <SelectTrigger
-                    className={`w-full ${errors.country ? "border-destructive" : ""}`}
+                    className={`cursor-pointer w-full ${errors.country ? "border-destructive" : ""}`}
                     aria-invalid={!!errors.country}
                   >
                     <SelectValue placeholder="Select your country">
@@ -512,7 +513,7 @@ export default function EditProfileForm({ user }: { user: User }) {
                   </SelectTrigger>
                   <SelectContent>
                     {countryList.map(({ code, name, flag }) => (
-                      <SelectItem key={code} value={code}>
+                      <SelectItem className="cursor-pointer" key={code} value={code}>
                         <div className="flex items-center gap-2">
                           <span>{flag}</span>
                           <span>{name}</span>

@@ -13,11 +13,6 @@ enum Role {
   ADMIN
 }
 
-enum TransactionType {
-  BUY
-  SELL
-}
-
 model User {
   id            String    @id
   name          String
@@ -38,9 +33,6 @@ model User {
 
   twoFactorEnabled Boolean?
   twofactors       TwoFactor[]
-
-  portfolioId String?    @unique
-  portfolio   Portfolio? @relation(fields: [portfolioId], references: [id])
 
   role Role @default(USER)
 
@@ -116,68 +108,4 @@ model TwoFactor {
   user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("twoFactor")
-}
-
-model Portfolio {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user User?
-
-  positions    Position[]
-  transactions Transaction[]
-  favorites    Favorite[]
-
-  @@map("portfolio")
-}
-
-model Position {
-  id          String    @id @default(cuid())
-  portfolioId String
-  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
-
-  symbol String
-
-  totalQuantity Float @default(0) // Quantidade total acumulada
-  totalInvested Float @default(0) // Total investido (soma de todos os aportes)
-  avgPrice      Float @default(0) // Preço médio ponderado
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([portfolioId, symbol])
-  @@map("position")
-}
-
-model Transaction {
-  id          String    @id @default(cuid())
-  portfolioId String
-  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
-
-  symbol   String // Símbolo da criptomoeda (ex: BTC, ETH)
-  type     TransactionType // BUY ou SELL
-  quantity Float // Quantidade transacionada
-  price    Float // Preço unitário da transação
-  amount   Float // Valor total da transação (quantity * price)
-  fee      Float           @default(0) // Taxa da transação
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("transaction")
-}
-
-model Favorite {
-  id          String    @id @default(cuid())
-  portfolioId String
-  portfolio   Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
-
-  symbol String // Símbolo da criptomoeda favorita (ex: BTC, ETH)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([portfolioId, symbol])
-  @@map("favorite")
 }

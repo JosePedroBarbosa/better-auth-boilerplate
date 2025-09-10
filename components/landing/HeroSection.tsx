@@ -13,8 +13,8 @@ export function HeroSection() {
         alt="Background"
         fill
         priority
-        // className="hidden sm:block absolute inset-0 object-cover brightness-95 grayscale"
-        className="hidden sm:block absolute inset-0 object-cover brightness-95"
+        className="hidden sm:block absolute inset-0 object-cover brightness-95 grayscale"
+        // className="hidden sm:block absolute inset-0 object-cover brightness-95"
       />
 
       {/* Mobile Background Image */}
@@ -23,8 +23,8 @@ export function HeroSection() {
         alt="Mobile Background"
         fill
         priority
-        // className="block sm:hidden absolute inset-0 object-cover brightness-95 grayscale"
-        className="block sm:hidden absolute inset-0 object-cover brightness-95"
+        className="block sm:hidden absolute inset-0 object-cover brightness-95 grayscale"
+        // className="block sm:hidden absolute inset-0 object-cover brightness-95"
       />
 
       {/* Gradient Overlay */}

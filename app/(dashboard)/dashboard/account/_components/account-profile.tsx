@@ -69,13 +69,7 @@ export function AccountProfile({ user }: AccountProfileProps) {
         <Separator className="my-6" />
 
         {/* Profile Details */}
-        <div className="grid gap-1 sm:gap-2">
-          <ProfileInfoItem
-            label="Display Name"
-            value={user.name || "Not set"}
-            icon={User}
-          />
-          
+        <div className="grid gap-1 sm:gap-2">          
           <ProfileInfoItem
             label="First Name"
             value={user.firstName || "Not provided"}
@@ -92,11 +86,6 @@ export function AccountProfile({ user }: AccountProfileProps) {
             icon={MapPin}
           />
           
-          <ProfileInfoItem
-            label="Email Address"
-            value={user.email}
-            icon={Mail}
-          />
         </div>
 
         <Separator className="my-6" />

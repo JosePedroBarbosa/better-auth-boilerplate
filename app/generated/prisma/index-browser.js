@@ -134,7 +134,6 @@ exports.Prisma.UserScalarFieldEnum = {
   country: 'country',
   stripeCustomerId: 'stripeCustomerId',
   twoFactorEnabled: 'twoFactorEnabled',
-  portfolioId: 'portfolioId',
   role: 'role'
 };
 
@@ -194,44 +193,6 @@ exports.Prisma.TwoFactorScalarFieldEnum = {
   userId: 'userId'
 };
 
-exports.Prisma.PortfolioScalarFieldEnum = {
-  id: 'id',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.PositionScalarFieldEnum = {
-  id: 'id',
-  portfolioId: 'portfolioId',
-  symbol: 'symbol',
-  totalQuantity: 'totalQuantity',
-  totalInvested: 'totalInvested',
-  avgPrice: 'avgPrice',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.TransactionScalarFieldEnum = {
-  id: 'id',
-  portfolioId: 'portfolioId',
-  symbol: 'symbol',
-  type: 'type',
-  quantity: 'quantity',
-  price: 'price',
-  amount: 'amount',
-  fee: 'fee',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
-exports.Prisma.FavoriteScalarFieldEnum = {
-  id: 'id',
-  portfolioId: 'portfolioId',
-  symbol: 'symbol',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -251,22 +212,13 @@ exports.Role = exports.$Enums.Role = {
   ADMIN: 'ADMIN'
 };
 
-exports.TransactionType = exports.$Enums.TransactionType = {
-  BUY: 'BUY',
-  SELL: 'SELL'
-};
-
 exports.Prisma.ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
   Verification: 'Verification',
   Subscription: 'Subscription',
-  TwoFactor: 'TwoFactor',
-  Portfolio: 'Portfolio',
-  Position: 'Position',
-  Transaction: 'Transaction',
-  Favorite: 'Favorite'
+  TwoFactor: 'TwoFactor'
 };
 
 /**
